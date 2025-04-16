@@ -1,0 +1,166 @@
+body {
+    background-color: var(--navy);
+    color: var(--blue-light);
+}
+
+.dashboard-container {
+    padding: 2rem;
+    font-family: var(--font-main);
+}
+
+/* header */
+
+.welcome h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+.welcome {
+    color: var(--blue-light);
+    text-align: center;
+}
+
+
+/* progress cards */
+.progress-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+    margin: 2rem auto;
+}
+.card {
+    background: var(--blue-green);
+    width: 15rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.6s ease;
+}
+.card h3, .progress-label, .card p {
+    color: var(--navy);
+}
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.btn {
+    background: #048C8C;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #037979;
+}
+
+/* daily goals section  */
+
+.daily-goal, .stats-section {
+    margin: 2rem 0;
+}
+.daily-goal {
+    background-color: #e6f7f7;
+    border-left: 5px solid #04A9A4;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.daily-goal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #034040;
+}
+.daily-goal ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.daily-goal li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: #034040;
+}
+.daily-goal li::before {
+    content: "✔️";
+    margin-right: 0.5rem;
+}
+.challenge-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px dashed #04A9A4;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.challenge-box:hover {
+    transform: translateY(-5px);
+}
+.challenge-box h3 {
+    font-size: 1.3rem;
+    color: #BF0404;
+    margin-bottom: 0.5rem;
+}
+.challenge-box p {
+    font-size: 1rem;
+    color: #034040;
+    margin-bottom: 1rem;
+}
+.btn-small {
+    background-color: #04A9A4;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+.btn-small:hover {
+    background-color: #037979;
+}
+
+/* study stats section  */
+
+.stats-section {
+    background-color: var(--blue-green);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+.stats-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #034040;
+}
+.stats-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1.1rem;
+}
+.stats-list li {
+    flex: 1 2 200px;
+    background-color: #fff;
+    border-left: 5px solid #04A9A4;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.stats-list li strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #048C8C;
+    margin-top: 0.25rem;
+}

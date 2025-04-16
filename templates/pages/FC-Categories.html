@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Flashcards Hub{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/FC-Categories.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="flashcard-hub">
+    <h1>Flashcard Hub</h1>
+    <p>Select a flashcard set to begin your study session or preview the topics.</p>
+
+    {% for chapter in chapters %}
+        <div class="chapter-box">
+            <div class="chapter-header">
+                <h2>{{ chapter.title }}</h2>
+                <div class="button-group">
+                    <button class="toggle-topics-btn">Preview Topics</button>
+                    <a href="{% url 'flashcard-set' chapter.slug 0 %}" class="start-btn">Start Studying</a>
+                </div>
+            </div>
+            <ul class="topic-list">
+                {% for topic in chapter.topics %}
+                    <li>{{ topic }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtns = document.querySelectorAll(".toggle-topics-btn");
+        toggleBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const topicList = btn.closest(".chapter-box").querySelector(".topic-list");
+                topicList.classList.toggle("visible");
+            });
+        });
+    });
+</script>
+
+{% endblock %}

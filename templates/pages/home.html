@@ -1,3 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
 
+{% block title %}Dashboard {% endblock %}
 
-<h1>Welcome!</h1>
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+
+    <!-- 1. Welcome Section -->
+    <section class="welcome">
+        <h1>Welcome, user.name</h1>
+        <p>You’re one step closer to certification.</p>
+    </section>
+
+    <!-- 2. Progress Cards -->
+    <section class="progress-cards">
+        <div class="card">
+            <h3>Flashcards</h3>
+            <div class="circular-progress" data-percentage="72">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                </svg>
+                <div class="progress-label">72%</div>
+            </div>
+            <p>72% Mastered</p>
+            <a href="#" class="btn">Continue</a>
+        </div>
+        <div class="card">
+            <h3>Tray Setups</h3>
+            <div class="circular-progress" data-percentage="72">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                </svg>
+                <div class="progress-label">72%</div>
+            </div>
+            <p>15 of 20 Completed</p>
+            <a href="#" class="btn">Practice</a>
+        </div>
+        <div class="card">
+            <h3>Instruments</h3>
+            <div class="circular-progress" data-percentage="72">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                </svg>
+                <div class="progress-label">72%</div>
+            </div>
+            <p>80 of 120 Identified</p>
+            <a href="#" class="btn">Review</a>
+        </div>
+        <div class="card">
+            <h3>Anatomy</h3>
+            <div class="circular-progress" data-percentage="72">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                </svg>
+                <div class="progress-label">72%</div>
+            </div>
+            <p>60% Explored</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+    </section>
+
+    <!-- 3. Daily Goals / Challenge -->
+    <section class="daily-goal">
+        <h2>Today’s Goal</h2>
+        <ul>
+            <li>Review 10 flashcards</li>
+            <li>Complete 1 Tray Setup</li>
+        </ul>
+        <div class="challenge-box">
+            <h3>Challenge of the Day</h3>
+            <p>Identify 5 orthopedic tools in under 60 seconds.</p>
+            <a href="#" class="btn-small">Try Now</a>
+        </div>
+    </section>
+
+    <!-- 5. Study Stats -->
+    <section class="stats-section">
+        <h2>Your Study Stats</h2>
+        <ul class="stats-list">
+            <li>Total Study Time: <strong>12h 45min</strong></li>
+            <li>Modules Completed: <strong>4 of 8</strong></li>
+            <li>Current Streak: <strong>3 days</strong></li>
+        </ul>
+    </section>
+
+</div>
+
+{% endblock %}

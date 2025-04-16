@@ -1,0 +1,72 @@
+.flashcard-hub {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.chapter-box {
+    border: 2px solid #05F2DB;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #f5fcfc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.chapter-header h2 {
+    margin: 0;
+    color: #034040;
+    font-size: 1.3rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.toggle-topics-btn,
+.start-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.toggle-topics-btn {
+    background-color: #048C8C;
+    color: white;
+}
+
+.start-btn {
+    background-color: #05F2DB;
+    color: #034040;
+    border: 1px solid #034040;
+}
+
+.toggle-topics-btn:hover,
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+.topic-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    display: none;
+}
+
+.topic-list.visible {
+    display: block;
+    color: black;
+}

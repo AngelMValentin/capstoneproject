@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ topic }} Flashcards{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/flashcard_set.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+    <h2>{{ title }}</h2>
+</div>
+<div class="flashcard-set">
+    <div class="card-inner">
+        <div class="card-front">
+            <p>{{ flashcard.question }}</p>
+        </div>
+        <div class="card-back">
+            <p>{{ flashcard.answer }}</p>
+        </div>
+    </div>
+
+    {% if card_index|add:"1" < flashcards|length %}
+        <div class="btnContainer">
+            <a href="{% url 'flashcard-set' slug=slug card_index=card_index|add:"1" %}" class="btn">Next</a>
+        </div>
+    {% else %}
+        <p>You’ve reached the end!</p>
+    {% endif %}
+</div>
+<script>
+    const flashcard = document.querySelector('.flashcard-set');
+    flashcard.addEventListener('click', () => {
+        flashcard.classList.toggle('flipped');
+    });
+</script>
+
+
+{% endblock %}
