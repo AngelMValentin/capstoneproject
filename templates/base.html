@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/mediaQueries.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {% block css %}
     {% endblock %}
@@ -16,14 +17,24 @@
     <header>
         <nav class="navbar">
             <div class="logoContainer">
-                <img class="logo" src="{% static 'img/Surgiprep.svg' %}"></img>
+                <img class="logo" width='200' height="200" src="{% static 'img/logo.webp' %}"></img>
             </div>
             <ul class="nav-links">
-                <li><a href="{% url 'home' %}">home</a></li>
-                <li><a href="{% url 'flashcard_home' %}">Flashcards</a></li>
-                <li><a href="">Tray Setup</a></li>
-                <li><a href="">Instruments</a></li>
-                <li><a href="">Logout</a></li>
+                <li><a href="{% url 'home' %}">
+                    <i class="fa-solid fa-house"></i>
+                </a></li>
+                <li><a href="{% url 'flashcard_home' %}">
+                    <i class="fa-solid fa-notes-medical"></i>
+                </a></li>
+                <li><a href="">
+                    <i class="fa-solid fa-xmarks-lines"></i>
+                </a></li>
+                <li><a href="{% url 'instrument_hub' %}">
+                    <i class="fa-solid fa-suitcase-medical"></i>
+                </a></li>
+                <li><a href="">
+                    <i class="fa-solid fa-lungs"></i>
+                </a></li>
             </ul>
         </nav>
     </header>

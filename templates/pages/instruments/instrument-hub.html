@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/instruments/instrument-hub.css' %}"> 
+{% endblock %}
+
+{% block content %}
+<div class="instrument-hub">
+    
+    <div class="specialties-grid">
+        <h1>Instrument Hub</h1>
+        <p>Select a specialty to start</p>
+        <div class="card-container">
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>General Surgery</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>Orthopedics</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>OB/GYN</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>Neurosurgery</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>Cardiothoracic</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>Urology</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>Plastic Surgery</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+    
+            <div class="specialty-card">
+                <div class="card-content">
+                    <h2>ENT</h2>
+                    <a href="">
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

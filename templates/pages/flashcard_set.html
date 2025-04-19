@@ -20,14 +20,14 @@
         </div>
     </div>
 
-    {% if card_index|add:"1" < flashcards|length %}
-        <div class="btnContainer">
-            <a href="{% url 'flashcard-set' slug=slug card_index=card_index|add:"1" %}" class="btn">Next</a>
-        </div>
-    {% else %}
-        <p>You’ve reached the end!</p>
-    {% endif %}
 </div>
+{% if card_index|add:"1" < flashcards|length %}
+    <div class="btnContainer">
+        <a href="{% url 'flashcard-set' slug=slug card_index=card_index|add:"1" %}" class="btn">Next</a>
+    </div>
+{% else %}
+    <p>You’ve reached the end!</p>
+{% endif %}
 <script>
     const flashcard = document.querySelector('.flashcard-set');
     flashcard.addEventListener('click', () => {
