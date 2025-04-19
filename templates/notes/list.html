@@ -1,0 +1,23 @@
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+
+<h1>List.html works!</h1>
+
+<div class="note-list">
+    <h1>Your notes</h1>
+
+    <div class="all-notes">
+        {% for note in all_notes %}
+        <div class="note-item">
+
+            {% if note.image.url %}
+            <img src="{{note.image.url}}" alt="">
+            {% endif %}
+
+            <h5>{{note.title}}</h5>
+        </div>
+    </div>
+</div>
