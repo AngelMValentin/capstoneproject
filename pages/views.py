@@ -66,15 +66,11 @@ def flashcard_set(request, slug, card_index):
     if not chapter_title:
         return render(request)
     
+    topic_filter = request.GET.get('topic')
     flashcards = Flashcard.objects.filter(chapter=chapter_title)
 
-    if not flashcards.exists():
-        return render(request, 'pages/flashcard_set.html', {
-            'title': chapter_title,
-            'flashcard': None,
-            'card_index': 0,
-            'flashcards': []
-        })
+    if topic_filter:
+        flashcards = flashcards.filter(topic=topic_filter)
 
     
     card_index = int(card_index)
@@ -82,15 +78,16 @@ def flashcard_set(request, slug, card_index):
         card_index = len(flashcards) - 1
 
     flashcard = flashcards[card_index]
+    all_topics = Flashcard.objects.filter(chapter=chapter_title).values_list('topic', flat=True).distinct()
     
-
-    flashcards = Flashcard.objects.filter(chapter=chapter_title)
     return render(request, 'pages/flashcard_set.html', {
         'flashcard': flashcard,
         'flashcards': flashcards,
         'title': chapter_title,
         'card_index': card_index,
-        'slug': slug
+        'slug': slug,
+        'topics': all_topics,
+        'selected_topic': topic_filter
     })
 
 

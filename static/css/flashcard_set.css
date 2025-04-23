@@ -58,3 +58,30 @@
 }
 
 
+
+.subtopic-filters {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.topic-buttons a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.topic-buttons a:hover {
+    background-color: #ddd;
+}
+
+.topic-buttons .active {
+    background-color: #333;
+    color: #fff;
+}
+
+

@@ -10,6 +10,17 @@
 <div class="heading">
     <h2>{{ title }}</h2>
 </div>
+<div class="subtopic-filters">
+    <p>Filter by Subtopic:</p>
+    <div class="topic-buttons">
+        <a href="{% url 'flashcard-set' slug=slug card_index=0 %}" class="{% if not selected_topic %}active{% endif %}">All</a>
+        {% for topic in topics %}
+            <a href="{% url 'flashcard-set' slug=slug card_index=0 %}?topic={{ topic|urlencode }}" class="{% if selected_topic == topic %}active{% endif %}">
+                {{ topic }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
 <div class="flashcard-set">
     <div class="card-inner">
         <div class="card-front">
@@ -23,10 +34,10 @@
 </div>
 {% if card_index|add:"1" < flashcards|length %}
     <div class="btnContainer">
-        <a href="{% url 'flashcard-set' slug=slug card_index=card_index|add:"1" %}" class="btn">Next</a>
+        <a href="{% url 'flashcard-set' slug=slug card_index=card_index|add:"1" %}{% if selected_topic %}?topic={{ selected_topic|urlencode }}{% endif %}" class="btn">Next</a>
     </div>
 {% else %}
-    <p>You’ve reached the end!</p>
+    <p style="width: 100%; text-align: center;">You’ve reached the end!</p>
 {% endif %}
 <script>
     const flashcard = document.querySelector('.flashcard-set');
