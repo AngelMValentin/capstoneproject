@@ -73,8 +73,21 @@
 .topic-list {
     margin-top: 1rem;
     padding-left: 1.5rem;
-    list-style-type: disc;
+    list-style-type: none;
     display: none;
+}
+.topic-list li {
+    border: 2px solid var(--navy);
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: .5rem;
+    color: var(--navy);
+
+}
+.topic-list li:hover {
+    box-shadow: 5px 5px 5px rgba(0, 15, 128, 0.07);
 }
 
 .topic-list.visible {
