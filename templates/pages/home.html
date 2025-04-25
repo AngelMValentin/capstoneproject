@@ -7,23 +7,24 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
+
 {% block content %}
 <div class="dashboard-container">
-
+    
     
     <section class="welcome">
         <h1>Welcome, user.name</h1>
         <p>You’re one step closer to certification.</p>
     </section>
-
+    
     
     <section class="progress-cards">
         <div class="card">
             <h3>Flashcards</h3>
             <div class="circular-progress" data-percentage="72">
-                <svg class="progress-ring" width="120" height="120">
-                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
-                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                <svg class="progress-ring">
+                    <circle class="progress-ring-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring-circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
                 </svg>
                 <div class="progress-label">72%</div>
             </div>
@@ -33,9 +34,9 @@
         <div class="card">
             <h3>Tray Setups</h3>
             <div class="circular-progress" data-percentage="72">
-                <svg class="progress-ring" width="120" height="120">
-                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
-                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                <svg class="progress-ring">
+                    <circle class="progress-ring-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring-circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
                 </svg>
                 <div class="progress-label">72%</div>
             </div>
@@ -45,9 +46,9 @@
         <div class="card">
             <h3>Instruments</h3>
             <div class="circular-progress" data-percentage="72">
-                <svg class="progress-ring" width="120" height="120">
-                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
-                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                <svg class="progress-ring">
+                    <circle class="progress-ring-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring-circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
                 </svg>
                 <div class="progress-label">72%</div>
             </div>
@@ -57,9 +58,9 @@
         <div class="card">
             <h3>Anatomy</h3>
             <div class="circular-progress" data-percentage="72">
-                <svg class="progress-ring" width="120" height="120">
-                    <circle class="progress-ring__circle-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
-                    <circle class="progress-ring__circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                <svg class="progress-ring">
+                    <circle class="progress-ring-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
+                    <circle class="progress-ring-circle" stroke="#04A9A4" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
                 </svg>
                 <div class="progress-label">72%</div>
             </div>
@@ -67,8 +68,8 @@
             <a href="#" class="btn">Explore</a>
         </div>
     </section>
-
-
+    
+    
     <section class="daily-goal">
         <h2>Today’s Goal</h2>
         <ul>
@@ -81,7 +82,7 @@
             <a href="#" class="btn-small">Try Now</a>
         </div>
     </section>
-
+    
     <section class="stats-section">
         <h2>Your Study Stats</h2>
         <ul class="stats-list">
@@ -90,7 +91,43 @@
             <li>Current Streak: <strong>3 days</strong></li>
         </ul>
     </section>
-
+    
 </div>
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+    console.log("script loaded");
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.circular-progress').forEach(el => {
+            const percent = parseInt(el.getAttribute('data-percentage'), 10) || 0;
+            setCircularProgress(el, percent)
+        } )
+    })
+
+    function setCircularProgress(element, percent) {
+        const circle = element.querySelector('.progress-ring-circle');
+        console.log(circle.r);
+
+
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        setTimeout(() => {
+            circle.style.transition = 'stroke-dashoffset 1s ease-in-out';
+            circle.style.strokeDashoffset = offset;
+        }, 100);
+
+        const label = element.querySelector('.progress-label');
+        label.textContent = `${percent}%`;
+    }
+</script>
 
 {% endblock %}

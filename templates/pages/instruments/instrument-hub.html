@@ -14,77 +14,17 @@
         <h1>Instrument Hub</h1>
         <p>Select a specialty to start</p>
         <div class="card-container">
+            {% for specialty in specialties %}
             <div class="specialty-card">
                 <div class="card-content">
-                    <h2>General Surgery</h2>
-                    <a href="">
+                    <h2>{{specialty.name}}</h2>
+                    <a href="{% url 'instrument_main' slug=specialty.slug index=0 %}">
                         Explore
                     </a>
                 </div>
             </div>
     
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>Orthopedics</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>OB/GYN</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>Neurosurgery</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>Cardiothoracic</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>Urology</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>Plastic Surgery</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
-    
-            <div class="specialty-card">
-                <div class="card-content">
-                    <h2>ENT</h2>
-                    <a href="">
-                        Explore
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ specialty.name }}</h1>
+
+
+{% if instruments %}
+    <ul>
+    {% for instrument in instruments %}
+        <li>{{ instrument.name }}</li>
+        <div>{{ instrument.model_embed_code|safe }}</div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No instruments available for this specialty.</p>
+{% endif %}
+
+{% endblock %}
