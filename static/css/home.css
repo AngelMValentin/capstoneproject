@@ -5,7 +5,7 @@ body {
 
 .dashboard-container {
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 1rem;
     font-family: var(--font-main);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10%;

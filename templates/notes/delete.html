@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Delete Details{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+
+<div class="note-delete">
+    <h2>Are you sure you want to delete: "{{note.title}}</h2>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <a href="{% url 'notes_list' %}">No, go back to list</a>
+
+        <button class="btn">Yes, delete the note</button>
+    </form>
+</div>
+
+{% endblock %}

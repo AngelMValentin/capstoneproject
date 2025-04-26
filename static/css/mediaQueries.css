@@ -1,13 +1,13 @@
 /* mobile screens */
 @media (max-width: 300px) {
     html {
-        font-size: 10px;
+        font-size: 14px;
     }
     
 }
 
 @media (min-width: 301px) and (max-width: 600px) {
-    html {font-size: 10px;}
+    html {font-size: 14px;}
     
     .logoContainer {display: none;}
 
@@ -19,6 +19,7 @@
     .dashboard-container {border-radius: 10px !important;}
     .card {
         width: 12rem;
+        max-width: 12rem;
         min-height: 12rem !important;
         padding: 1rem;
         margin: 1rem;
@@ -30,19 +31,35 @@
 @media screen and (min-width: 601px)
 and (max-width: 900px) {
     html {
-        font-size: 12px;
+        font-size: 16px;
+    }
+    .progress-ring {
+        min-height: 100%;
+    }
+    .card {
+        max-width: 12rem;
+        padding: 1rem;
+        margin: 1rem;
     }
 }
 
 @media screen and (min-width: 901px)
 and (max-width: 1200px) {
     html {
-        font-size: 16px;
+        font-size: 18px;
+    }
+    .card {
+        padding: 1rem;
+        margin: 1rem;
     }
 }
 
 @media (min-width: 1201px) {
     html {
         font-size: 20px;
+    }
+    .card {
+        padding: 1rem;
+        margin: 1rem;
     }
 }

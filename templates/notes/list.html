@@ -18,6 +18,9 @@
             {% endif %}
 
             <h5>{{note.title}}</h5>
+            <label for="">{{note.created_on}}</label>
+
+            <a href="{% url 'note_detail' note.id %}">View Note</a>
         </div>
     </div>
 </div>
