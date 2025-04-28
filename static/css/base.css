@@ -44,9 +44,8 @@ body {
     height: 75%;
 }
 .nav-links {
-    width: 50vw;
+    width: 90%;
     display: flex;
-    gap: 5rem;
     flex-direction: row;
     align-items: center;
     list-style: none;
@@ -55,7 +54,10 @@ body {
     text-decoration: none;
 }
 .nav-links li {
+    flex: 1 1;
     transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
 }
 .nav-links i {
     color: var(--navy);
