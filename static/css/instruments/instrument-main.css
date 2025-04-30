@@ -1,0 +1,36 @@
+.instrument-main {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.specialty-name {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--navy);
+}
+.instrument-container {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.model-container {
+    display: flex;
+    flex-direction: row;
+}
+.model_embed {
+    flex: 6
+}
+.sketchfab-embed-wrapper iframe {
+    width: 400px;
+    margin: 10px;
+}
+.model-description {
+    flex: 6;
+}
+li {
+    list-style: none;
+}

@@ -2,23 +2,36 @@
 {% load static %}
 
 {% block css %}
+<link rel="stylesheet" href="{% static 'css/instruments/instrument-main.css' %}">
 
 {% endblock %}
 
 {% block content %}
+<div class="instrument-main">
+    <h1 class="specialty-name">{{ specialty.name }}</h1>
+    
+    
+    {% if instruments %}
+    <div class="instrument-container">
+        <ul>
+        {% for instrument in instruments %}
+        <div class="model-container">
+            <div class="model_embed">{{ instrument.model_embed_code|safe }}</div>
+            <div class="model-description">
+                <p>This is a description</p>
+            </div>
 
-<h1>{{ specialty.name }}</h1>
-
-
-{% if instruments %}
-    <ul>
-    {% for instrument in instruments %}
+        </div>
         <li>{{ instrument.name }}</li>
-        <div>{{ instrument.model_embed_code|safe }}</div>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No instruments available for this specialty.</p>
-{% endif %}
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No instruments available for this specialty.</p>
+    {% endif %}
+
+    </div>
+
+</div>
+
 
 {% endblock %}

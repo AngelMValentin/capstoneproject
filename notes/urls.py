@@ -7,4 +7,6 @@ urlpatterns = [
     path("details/<int:pk>/", views.NoteDetail.as_view(), name='note_detail'),
     path("update/<int:pk>/", views.NoteUpdate.as_view(), name='note_update'),
     path("delete/<int:pk>/", views.NoteDelete.as_view(), name='note_delete'),
+    path('create_comment/', views.create_comment, name='create-comment'),
+
 ]

@@ -6,7 +6,7 @@
 :root {
     --primary-blue: #0078D4;
     --blue-light: #CDE8FB;
-    --blue-bg: #EAF3FC;
+    --blue-bg: #f9fbfc;
     --blue-mid: #90CDF4;
     --text-dark: #1A1A1A;
     --navy: #004B87;
@@ -17,10 +17,7 @@
 }
 
 body {
-    background-image: url('../img/background1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom center;
+    background: linear-gradient(to bottom right, #f9fbfc, var(--navy));
     color: var(--navy);
     overscroll-behavior: none;
 }

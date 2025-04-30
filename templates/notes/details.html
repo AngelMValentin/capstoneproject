@@ -30,6 +30,25 @@
         <a href="{% url 'note_delete' note.id %}">Delete Note</a>
     </div>
 
+    <div class="comments">
+        {% for cmt in comments  %}
+        <div class="comment">
+            <label class="user">{{comment.author.username}}</label>
+            <p>{{cmt.content}}</p>
+            <label class='date'>{{cmt.created_on}}</label>
+        </div>
+        {% endfor %}
+        
+        <div class="comment">
+            <form action="{% url 'create_comment' %}" method="post">
+                <label for="content" class="user">Create a new comment</label>
+                <input type="hidden" name="note_id" value=""{{note.id}}>
+                <textarea name="content" id="" rows="3"></textarea>
+                <button class="">Save</button>
+            </form>
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}

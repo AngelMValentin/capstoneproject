@@ -1,5 +1,5 @@
 body {
-    background-color: var(--navy);
+    background: linear-gradient(to bottom right, #f9fbfc, var(--navy));
     color: var(--blue-light);
 }
 
@@ -7,7 +7,7 @@ body {
     margin: 2rem auto;
     padding: 1rem;
     font-family: var(--font-main);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10%;
 }
 
@@ -29,7 +29,7 @@ body {
     flex-wrap: wrap;
 }
 .card {
-    background: var(--blue-green);
+    background: var(--blue-light);
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     text-align: center;
@@ -76,7 +76,7 @@ body {
     font-size: 1rem;
 }
 .btn {
-    background: #048C8C;
+    background: var(--navy);
     color: white;
     padding: 0.5rem 1rem;
     display: inline-block;
@@ -87,7 +87,7 @@ body {
 }
 .btn:hover {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-    background-color: #037979;
+    background-color: #030bab;
 }
 
 /* daily goals section  */
@@ -96,8 +96,8 @@ body {
     margin: 2rem 0;
 }
 .daily-goal {
-    background-color: #e6f7f7;
-    border-left: 5px solid #04A9A4;
+    background-color: var(--blue-light);
+    border-left: 5px solid var(--navy);
     padding: 2rem;
     margin-top: 2rem;
     border-radius: 1rem;
@@ -128,7 +128,7 @@ body {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 0.75rem;
-    border: 2px dashed #04A9A4;
+    border: 2px dashed var(--navy);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -146,7 +146,7 @@ body {
     margin-bottom: 1rem;
 }
 .btn-small {
-    background-color: #04A9A4;
+    background-color: red;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -156,13 +156,14 @@ body {
     transition: background-color 0.3s ease;
 }
 .btn-small:hover {
-    background-color: #037979;
+    background-color: var(--blue-light);
+    color: red;
 }
 
 /* study stats section  */
 
 .stats-section {
-    background-color: var(--blue-green);
+    background-color: var(--blue-light);
     padding: 2rem;
     margin-top: 2rem;
     border-radius: 1rem;
@@ -171,7 +172,7 @@ body {
 .stats-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #034040;
+    color: var(--navy);
 }
 .stats-list {
     list-style: none;
@@ -184,7 +185,7 @@ body {
 .stats-list li {
     flex: 1 2 200px;
     background-color: #fff;
-    border-left: 5px solid #04A9A4;
+    border-left: 5px solid var(--navy);
     padding: 1rem 1.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -192,6 +193,6 @@ body {
 .stats-list li strong {
     display: block;
     font-size: 1.2rem;
-    color: #048C8C;
+    color: var(--navy);
     margin-top: 0.25rem;
 }

@@ -16,13 +16,13 @@
     .navbar { 
         width: 100%; 
         margin: 0 auto;
-        background-color: #d3d3d3;
+        background-color: #f0f4ff;
     }
 
     .progress-ring {
         aspect-ratio: 1 / 1 !important;
     }
-    .dashboard-container {border-radius: 2rem;}
+    .dashboard-container {width: 90%; border-radius: 2rem;}
     .card {
         width: 90%;
         padding: 1rem;
