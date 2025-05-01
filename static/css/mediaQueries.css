@@ -60,6 +60,9 @@
         padding: 1rem;
         margin: 1rem;
     }
+    .navbar {
+        justify-content: space-around;
+    }
     
 }
 

@@ -36,6 +36,9 @@ class Instrument(models.Model):
     def __str__(self):
         return self.name
     
+    def get_embed_codes(self):
+        return [code for code in [self.model_embed_code1, self.model_embed_code2, self.model_embed_code3] if code]
+    
     def get_random_question(self):
         return random.choice(self.questions.all())
     
