@@ -12,13 +12,13 @@
     
     <div class="specialties-grid">
         <h1>Instrument Hub</h1>
-        <p>Select a specialty to start</p>
+        <p>Select a Instrument type to start</p>
         <div class="card-container">
-            {% for specialty in specialties %}
+            {% for types in InstrumentTypes %}
             <div class="specialty-card">
                 <div class="card-content">
-                    <h2>{{specialty.name}}</h2>
-                    <a href="{% url 'instrument_main' slug=specialty.slug index=0 %}">
+                    <h2>{{types.name}}</h2>
+                    <a href="{% url 'instrument_main' slug=types.slug %}">
                         Explore
                     </a>
                 </div>

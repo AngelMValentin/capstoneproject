@@ -7,8 +7,8 @@ body {
     margin: 2rem auto;
     padding: 1rem;
     font-family: var(--font-main);
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5%;
 }
 
 
@@ -25,18 +25,17 @@ body {
 
 /* progress cards */
 .progress-cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-gap: 20px;
 }
 .card {
+    width: 80%;
     background: var(--blue-light);
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.6s ease;
-    flex-grow: 1;
-    flex-basis: 200px;
-    max-width: 300px;
 }
 .card h3, .progress-label, .card p {
     color: var(--navy);
@@ -93,15 +92,16 @@ body {
 /* daily goals section  */
 
 .daily-goal, .stats-section {
-    margin: 2rem 0;
+    margin: 20px 0;
 }
 .daily-goal {
     background-color: var(--blue-light);
     border-left: 5px solid var(--navy);
-    padding: 2rem;
-    margin-top: 2rem;
+    padding: 20px;
+    margin: 20px auto 20px auto;
     border-radius: 1rem;
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
 }
 .daily-goal h2 {
     font-size: 1.5rem;
@@ -163,10 +163,11 @@ body {
 /* study stats section  */
 
 .stats-section {
+    width: 90%;
     background-color: var(--blue-light);
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 1rem;
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
 }
 .stats-section h2 {

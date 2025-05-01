@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Specialty, Instrument, QuizQuestion
+from .models import Specialty, Instrument, QuizQuestion, InstrumentType
 
 # Register your models here.
 
@@ -20,3 +20,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ['question_text', 'instrument']
     search_fields = ['question_text']
     list_filter = ['instrument']
+
+@admin.register(InstrumentType)
+class InstrumentTypeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug']

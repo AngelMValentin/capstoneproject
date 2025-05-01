@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-class Specialty(models.Model):
+class InstrumentType(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)
 
@@ -16,13 +16,22 @@ class Specialty(models.Model):
     def __str__(self):
         return self.name
     
+class Specialty(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
 class Instrument(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=False)
+    instrument_type = models.ForeignKey(InstrumentType, on_delete=models.CASCADE, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     specialties = models.ManyToManyField(Specialty, related_name='instruments')
     image = models.ImageField(upload_to='instrument_images/', blank=True, null=True)
-    model_embed_code = models.TextField(blank=True, null=True)
+    model_embed_code1 = models.TextField(blank=True, null=True)
+    model_embed_code2 = models.TextField(blank=True, null=True)
+    model_embed_code3 = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

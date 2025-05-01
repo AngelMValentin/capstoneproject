@@ -18,19 +18,17 @@
         margin: 0 auto;
         background-color: #f0f4ff;
     }
-
-    .progress-ring {
-        aspect-ratio: 1 / 1 !important;
+    .progress-cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+
+    
     .dashboard-container {width: 90%; border-radius: 2rem;}
     .card {
-        width: 90%;
         padding: 1rem;
         margin: 1rem auto;
     }
     .nav-links {width: 100%; justify-content: space-around !important;}
-    .progress-cards {justify-content: center;}
-    .card-container {width: 90%; display: flex; flex-direction: column; justify-content: center;}
 
     footer {
         display: none !important;
@@ -44,29 +42,17 @@
         font-size: 16px;
     }
     .logoContainer {display: none;}
-    .progress-ring {
-        min-height: 100%;
-    }
     .card {
-        height: fit-content;
         padding: 0.5rem;
         margin: 0.5rem;
-        flex: 1 1;
     }
     .navbar {
         justify-content: space-around;
     }
     
-    .progress-cards {justify-content: center; flex-direction: row; flex-wrap: unset;}
-    .card-container {
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-    }
 }
 
-@media screen and (min-width: 901px)
-and (max-width: 1200px) {
+@media screen and (min-width: 1201px) {
     html {
         font-size: 18px;
     }
@@ -74,23 +60,6 @@ and (max-width: 1200px) {
         padding: 1rem;
         margin: 1rem;
     }
-    .progress-cards {justify-content: center;}
-    .card-container {width: 90%; display: flex; flex-direction: row;}
+    
 }
 
-@media (min-width: 1201px) {
-    html {
-        font-size: 20px;
-    }
-    .card {
-        padding: 1rem;
-        margin: 1rem;
-    }
-    .card-container {
-        display: flex;
-    }
-    .progress-cards {
-        flex-wrap: unset;
-        justify-content: center;
-    }
-}

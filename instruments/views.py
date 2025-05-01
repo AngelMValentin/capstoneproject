@@ -1,19 +1,17 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Instrument, Specialty
+from .models import Instrument, Specialty, InstrumentType
 
 # Create your views here.
 
 def instrument_hub_view(request):
-    specialties = Specialty.objects.all()
-    return render(request, "pages/instruments/instrument-hub.html", {'specialties': specialties})
+    InstrumentTypes = InstrumentType.objects.all()
+    return render(request, "pages/instruments/instrument-hub.html", {'InstrumentTypes': InstrumentTypes})
 
-def instrument_main_view(request, slug, index):
-    index = int(request.GET.get('index', 0))
-    specialty = get_object_or_404(Specialty, slug=slug)
-    instruments = Instrument.objects.filter(specialties=specialty)
+def instrument_main_view(request, slug):
+    specialty = get_object_or_404(InstrumentType, slug=slug)
+    instruments = Instrument.objects.filter(instrument_type__slug=slug)
     return render(request, 'pages/instruments/instrument-main.html', {
         'specialty': specialty,
         'instruments': instruments,
-        'index': index
         })
     
