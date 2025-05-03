@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'pages',
     'instruments',
     'notes',
+    'users',
 ]
 
 MIDDLEWARE = [

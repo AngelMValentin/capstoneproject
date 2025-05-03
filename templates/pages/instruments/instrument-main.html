@@ -7,44 +7,37 @@
 {% endblock %}
 
 {% block content %}
+<h1 class="specialty-name">{{ specialty.name }}</h1>
 <div class="instrument-main">
-    <h1 class="specialty-name">{{ specialty.name }}</h1>
     
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            {% for instrument in instruments %}
-                {% if instruments %}
-                {% with embed_codes_list=instruments.0.get_embed_codes %}
-                    {% for code in embed_codes_list %}
-                    {% if code %}
-                        <div class="carousel-item model_embed {% if forloop.first %}active{% endif %}">
-                            <div class="model_embed">{{ code|safe }}</div>
-                        </div>
-                    {% endif %}
-                    {% endfor %}
-                {% endwith %}
-                {% else %}
-                <p>No instruments available for this specialty.</p>
-                {% endif %}
+    <div class="carousel">
+        {% for instrument in instruments %}
+            {% with embed_codes=instrument.get_embed_codes %}
+            {% for code in embed_codes %}
+            <input type="radio" name="slider" id="slide{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} hidden>
             {% endfor %}
+            
+            <div class="slides">
+                {% for code in embed_codes %}
+                <div class="slide" id="s{{ forloop.counter }}">
+                    {{ code|safe }}
+                </div>
+                {% endfor %}
+            </div>
+
+        <div class="navigation">
+                {% for code in embed_codes %}
+                    <label for="slide{{forloop.counter}}"></label>
+                {% endfor %}
+                
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+            {% endwith %}
+        {% endfor %}
+        
     </div>
-
-
-
+    <div class="Instrument_description">
+        <textarea name="" id="" rows=9 cols=40 readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, sed quasi! Culpa id deserunt doloremque sequi explicabo eaque alias est eos nam eveniet, dolorem facere non, in laudantium aspernatur tempore rerum ex maiores repellendus cum dolor recusandae, error dolores? Magnam tempore possimus commodi vel autem quia, praesentium quam aspernatur aut qui. Neque molestiae, fugit iure nulla vero quam, beatae vel aperiam quasi, consequuntur repellendus corrupti nisi totam animi officiis. Ducimus iusto eaque sunt, veniam accusamus adipisci molestiae, ea ut obcaecati exercitationem assumenda quidem suscipit modi excepturi deserunt ratione ullam! Sint dolore fugiat repellendus quia amet asperiores voluptas ex ipsum tempore.</textarea>
+    </div>
 </div>
 
 
