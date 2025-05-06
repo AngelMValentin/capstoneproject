@@ -36,7 +36,31 @@
         
     </div>
     <div class="Instrument_description">
-        <textarea name="" id="" rows=9 cols=40 readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, sed quasi! Culpa id deserunt doloremque sequi explicabo eaque alias est eos nam eveniet, dolorem facere non, in laudantium aspernatur tempore rerum ex maiores repellendus cum dolor recusandae, error dolores? Magnam tempore possimus commodi vel autem quia, praesentium quam aspernatur aut qui. Neque molestiae, fugit iure nulla vero quam, beatae vel aperiam quasi, consequuntur repellendus corrupti nisi totam animi officiis. Ducimus iusto eaque sunt, veniam accusamus adipisci molestiae, ea ut obcaecati exercitationem assumenda quidem suscipit modi excepturi deserunt ratione ullam! Sint dolore fugiat repellendus quia amet asperiores voluptas ex ipsum tempore.</textarea>
+        <div class="accordion">
+        {% for item in name_and_descriptions %}
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span>{{ item.specificInstrument }}</span>
+                <span class="accordion-icon">▼</span>
+              </div>
+              <div class="accordion-content">
+                {{ item.description }}
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="question_container">
+        <form action="" method="post">
+            <h5>This is a title</h5>
+            <br>
+            <ul class="choice_container">
+                <li><span class="dot"></span><h5>choice 1</h5></li>
+                <li>choice 2</li>
+                <li>choice 3</li>
+                <li>choice 4</li>
+            </ul>
+        </form>
     </div>
 </div>
 
@@ -44,5 +68,13 @@
 {% endblock %}
 
 {% block js %}
+<script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+</script>
 
 {% endblock %}

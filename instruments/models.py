@@ -24,9 +24,7 @@ class Specialty(models.Model):
     
 class Instrument(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(blank=False)
     instrument_type = models.ForeignKey(InstrumentType, on_delete=models.CASCADE, blank=True, null=True)
-    notes = models.TextField(blank=True, null=True)
     specialties = models.ManyToManyField(Specialty, related_name='instruments')
     image = models.ImageField(upload_to='instrument_images/', blank=True, null=True)
     model_embed_code1 = models.TextField(blank=True, null=True)
@@ -49,3 +47,11 @@ class QuizQuestion(models.Model):
 
     def __str__(self):
         return f"Q: {self.question_text} - {self.instrument.name}"
+    
+class Instrument_NameAndDescription(models.Model):
+    instrumentType = models.ForeignKey(InstrumentType, on_delete=models.CASCADE)
+    specificInstrument = models.CharField(max_length=100)
+    description = models.TextField(blank=False)
+
+    def __str__(self):
+        return str(self.instrumentType)

@@ -1,8 +1,9 @@
 .instrument-main {
     width: 100vw;
-    height: 95vh;
+    height: fit-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .specialty-name {
     width: 80%;
@@ -60,12 +61,61 @@
     border-color: var(--navy);
 }
 .Instrument_description {
-    overflow-y: scroll;
+    width: 80%;
+    background-color: #ccc;
+    border-radius: 20px;
 }
-.Instrument_description textarea {
-    padding: 5.2px;
-    resize: none;
-    border: none;
-    cursor: pointer;
+.accordion {
+    width: 100%;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.accordion-content {
+    padding: 1rem;
+}
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.accordion-content {
+    display: none;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.question_container {
+    width: 80%;
+    background-color: white;
+    margin: 2rem 0;
+    border-radius: 20px;
+    border: 2px solid var(--navy);
+    box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.choice_container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+form h5 {
+    text-align: center;
+    padding: 1rem;
+}
+.choice_container li {
+    list-style: none;
+    border: 2px solid var(--navy);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+}
+.dot {
+    width: 5px;
+    height: 5px;
+    border: 2px solid var(--navy);
+    border-radius: 29%;
 }
 
