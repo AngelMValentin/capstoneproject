@@ -52,14 +52,22 @@
     </div>
     <div class="question_container">
         <form action="" method="post">
-            <h5>This is a title</h5>
+            {% csrf_token %}
+            <h5>{{ question.question_text }}</h5>
             <br>
-            <ul class="choice_container">
-                <li><span class="dot"></span><h5>choice 1</h5></li>
-                <li>choice 2</li>
-                <li>choice 3</li>
-                <li>choice 4</li>
-            </ul>
+            <div class="choice_container">
+                {% for c in choices %}
+                <label class="choiceLabel"><input type="radio" 
+                    name="choice"
+                    data-is-correct="{{ c.is_correct|yesno:'true,false' }}"
+                    >{{ c.choice_text }}</label>
+                {% endfor %}
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="questionBtn" id="checkBtn">Check your Answer</button>
+
+                <button type="submit">Next Question</button>
+            </div>
         </form>
     </div>
 </div>
@@ -75,6 +83,32 @@
         item.classList.toggle('active');
       });
     });
+
+    document.getElementById('checkBtn').addEventListener('click', () => {
+        const selected = document.querySelector('input[name="choice"]:checked');
+        if (!selected) {
+            alert("Please selected an answer.");
+            return;
+        }
+
+        const isCorrect = selected.dataset.isCorrect === "true";
+        const label = selected.closest('label');
+
+        document.querySelectorAll('.choiceLabel').forEach(lbl => {
+            lbl.classList.remove('correct', 'wrong');
+        });
+        label.classList.add(isCorrect ? 'correct' : 'wrong');
+    });
 </script>
+{% if request.method == "POST" %}
+<script>
+    window.addEventListener('load', () => {
+        const questionSection = document.querySelector('.question_container');
+        if (questionSection) {
+            questionSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+</script>
+{% endif %}
 
 {% endblock %}

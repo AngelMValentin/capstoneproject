@@ -43,7 +43,6 @@ class Instrument(models.Model):
 class QuizQuestion(models.Model):
     instrument = models.ForeignKey(Instrument, on_delete=models.CASCADE, related_name='questions')
     question_text = models.TextField()
-    correct_choice = models.CharField(max_length=255)
 
     def __str__(self):
         return f"Q: {self.question_text} - {self.instrument.name}"
@@ -55,3 +54,11 @@ class Instrument_NameAndDescription(models.Model):
 
     def __str__(self):
         return str(self.instrumentType)
+    
+class QuizChoice(models.Model):
+    question = models.ForeignKey(QuizQuestion, on_delete=models.CASCADE, related_name='choices')
+    choice_text = models.CharField(max_length=255)
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.choice_text
