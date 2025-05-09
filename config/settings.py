@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'instruments',
     'notes',
     'users',
+    'anatomy',
 ]
 
 MIDDLEWARE = [

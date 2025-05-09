@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="profile">
+    <h1>{{profile.user.username}}</h1>
+
+    <div class="info">
+        <label for="">{{profile.user.first_name}}</label>
+        <label for="">{{profile.user.last_name}}</label>
+    </div>
+
+    <div>
+        {% if profile.picture %}
+            <img src="{{profile.picture.url}}">
+        {% endif %}
+
+        <label for="">{{profile.phone_number}}</label>
+    </div>
+</div>
+{% endblock %}

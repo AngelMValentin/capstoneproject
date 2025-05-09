@@ -33,6 +33,9 @@
     <div class="comments">
         {% for cmt in comments  %}
         <div class="comment">
+            {% if cmt.author.profile.picture %}
+                <img src="{{cmt.author.profile.picture.url}}" alt="">
+            {% endif %}
             <label class="user">{{comment.author.username}}</label>
             <p>{{cmt.content}}</p>
             <label class='date'>{{cmt.created_on}}</label>

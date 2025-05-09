@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update your Profile
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="update_profile">
+    <h1>Update your Profile</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p}}
+
+        <button>Save Changes</button>
+    </form>
+</div>
+{% endblock %}
