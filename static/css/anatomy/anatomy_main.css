@@ -53,3 +53,17 @@
     background-color: var(--navy);
     transform: scale(1.1) !important;
 }
+.anatomy-list {
+    display: none;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+.anatomy-list.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

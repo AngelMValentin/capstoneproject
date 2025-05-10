@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="system-container">
+    <h1>{{ system.name }}</h1>
+    <p>More detailed content for {{ system.name }} will go here.</p>
+
+    <a href="{% url 'systems_page' slug=next_slug %}" class="next-btn">Next System</a>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

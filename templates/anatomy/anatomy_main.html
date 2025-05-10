@@ -17,26 +17,143 @@ Anatomy Hub
             <p>Select a specialty to begin studying the anatomy for that selection.</p>
         </div>
     
-        {% for s in specialties %}
             <div class="anatomyMain-box">
                 <div class="specialty-header">
-                    <h2>{{ s.name }}</h2>
+                    <h2>General Surgery</h2>
                     <div class="button-group">
                         <button class="toggle-topics-btn">Preview Topics</button>
-                        <a href="" class="start-btn">Start Studying</a>
+                        <a href="{% url 'systems_page' slug='digestive-system' %}" class="start-btn">Start Studying</a>
                     </div>
                 </div>
                 <ul class="anatomy-list">
-                    {% for a in anatomy %}
-                        <li>{{a.system}}</li>
-                    {% endfor %}
+                        <li>Digestive System</li>
+                        <li>Hepatobiliary System</li>
+                        <li>Abdominal Wall</li>
+                        <li>Vasculature</li>
                 </ul>
             </div>
-        {% endfor %}
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>Orthopedics</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='skeletal-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Skeletal System</li>
+                        <li>Muscular System</li>
+                        <li>Peripheral nerves near bones</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>OB/GYN</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='female-reproductive-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Female Reproductive System</li>
+                        <li>Pelvic Anatomy</li>
+                        <li>Urinary bladder</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>NeuroSurgery</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='nervous-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Nervous System</li>
+                        <li>Vertebral Column</li>
+                        <li>Vascular structures in brain</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>Cardiothoracic</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='cardiovascular-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                    <li>Cardiovascular System</li>
+                    <li>Respiratory System</li>
+                    <li>Major thoracic vessels</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>Urology</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='urinary-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Urinary System</li>
+                        <li>Male Reproductive System</li>
+                        <li>Pelvic vasculature</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>Plastic Surgery</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='integumentary-system' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Integumentary System</li>
+                        <li>Reconstructive Structures</li>
+                </ul>
+            </div>
+            <div class="anatomyMain-box">
+                <div class="specialty-header">
+                    <h2>ENT</h2>
+                    <div class="button-group">
+                        <button class="toggle-topics-btn">Preview Topics</button>
+                        <a href="{% url 'systems_page' slug='head-neck-anatomy' %}" class="start-btn">Start Studying</a>
+                    </div>
+                </div>
+                <ul class="anatomy-list">
+                        <li>Head & Neck Anatomy</li>
+                        <li>Auditory System</li>
+                        <li>Thyroid/Parathyroid</li>
+                        <li>Cranial nerves/li>
+                </ul>
+            </div>
+            
     </div>
 </div>
 
 {% endblock %}
 
 {% block js %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButtons = document.querySelectorAll(".toggle-topics-btn");
+  
+      toggleButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const anatomyBox = btn.closest(".anatomyMain-box");
+          const list = anatomyBox.querySelector(".anatomy-list");
+  
+          list.classList.toggle("show");
+  
+          // Optionally change button text
+          btn.textContent = list.classList.contains("show")
+            ? "Hide Topics"
+            : "Preview Topics";
+        });
+      });
+    });
+</script>
 {% endblock %}
