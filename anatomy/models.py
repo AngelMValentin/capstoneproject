@@ -20,6 +20,11 @@ class AnatomyMain(models.Model):
     model_embed_code3 = models.TextField(blank=True, null=True)
     model_embed_code4 = models.TextField(blank=True, null=True)
 
+    description1 = models.TextField(blank=True, null=True)
+    description2 = models.TextField(blank=True, null=True)
+    description3 = models.TextField(blank=True, null=True)
+    description4 = models.TextField(blank=True, null=True)
+
     def get_embed_codes(self):
         return [code for code in [self.model_embed_code1, self.model_embed_code2, self.model_embed_code3] if code]
 
