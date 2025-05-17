@@ -13,7 +13,7 @@ class AnatomySystem(models.Model):
 class AnatomyMain(models.Model):
     specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, blank=True, null=True)
     system = models.ForeignKey(AnatomySystem, on_delete=models.CASCADE, blank=True, null=True)
-    slug = models.SlugField(unique=False, blank=True)
+    slug = models.SlugField(unique=True, blank=True)
 
     model_embed_code1 = models.TextField(blank=True, null=True)
     model_embed_code2 = models.TextField(blank=True, null=True)
@@ -26,7 +26,7 @@ class AnatomyMain(models.Model):
     description4 = models.TextField(blank=True, null=True)
 
     def get_embed_codes(self):
-        return [code for code in [self.model_embed_code1, self.model_embed_code2, self.model_embed_code3] if code]
+        return [code for code in [self.model_embed_code1, self.model_embed_code2, self.model_embed_code3, self.model_embed_code4] if code]
 
     def save(self, *args, **kwargs):
         if not self.slug:

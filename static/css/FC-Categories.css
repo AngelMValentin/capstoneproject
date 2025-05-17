@@ -1,5 +1,6 @@
 .hub-container {
-    height: 44.25rem;
+    height: fit-content;
+    min-height: 76.375vh;
 }
 .flashcard-hub {
     width: 80vw;
@@ -16,7 +17,7 @@
 }
 
 .chapter-box {
-    border: 2px solid #05F2DB;
+    border: 2px solid var(--navy);
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -33,7 +34,7 @@
 
 .chapter-header h2 {
     margin: 0;
-    color: #034040;
+    color: var(--navy);
     font-size: 1.3rem;
 }
 
@@ -55,42 +56,40 @@
 }
 
 .toggle-topics-btn {
-    background-color: #048C8C;
-    color: white;
+    background-color: transparent;
+    color: var(--navy);
+    font-size: 1rem;
+    border: 2px solid var(--navy);
 }
 
 .start-btn {
-    background-color: #05F2DB;
-    color: #034040;
-    border: 1px solid #034040;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    font-size: 1rem;
 }
 
 .toggle-topics-btn:hover,
 .start-btn:hover {
-    transform: scale(1.05);
+    background-color: var(--navy);
+    color: white;
 }
 
 .topic-list {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
-    list-style-type: none;
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
     display: none;
 }
 .topic-list li {
-    border: 2px solid var(--navy);
-    width: fit-content;
-    padding: 5px;
-    margin: 5px;
-    display: inline-block;
-    border-radius: .5rem;
     color: var(--navy);
-
+    display: block;
 }
-.topic-list li:hover {
-    box-shadow: 5px 5px 5px rgba(0, 15, 128, 0.07);
-}
-
 .topic-list.visible {
     display: block;
-    color: black;
+    color: var(--navy);
+    animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
