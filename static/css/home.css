@@ -1,6 +1,12 @@
 body {
     background: linear-gradient(to bottom right, #f9fbfc, var(--navy));
     color: var(--blue-light);
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .dashboard-container {
@@ -27,10 +33,9 @@ body {
 .progress-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-    grid-gap: 20px;
+    grid-gap: 1rem;
 }
 .card {
-    width: 80%;
     background: var(--blue-light);
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -97,7 +102,7 @@ body {
 .daily-goal {
     background-color: var(--blue-light);
     border-left: 5px solid var(--navy);
-    padding: 20px;
+    padding: 1rem;
     margin: 20px auto 20px auto;
     border-radius: 1rem;
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
@@ -165,8 +170,8 @@ body {
 .stats-section {
     width: 90%;
     background-color: var(--blue-light);
-    padding: 20px;
-    margin: 20px auto 20px auto;
+    padding: 1rem;
+    margin: 1rem auto 1rem auto;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
 }

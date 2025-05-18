@@ -1,7 +1,13 @@
 /* mobile screens */
 
 @media (max-width: 600px) {
-    html {font-size: 14px;}
+    html {
+        font-size: 14px;
+        max-width: 95vw;
+    }
+    main {
+        max-width: 90vw;
+    }
     
     .logoContainer {display: none;}
 
@@ -11,6 +17,8 @@
         left: 0;
         right: 0;
         z-index: 1000;
+        max-width: 90vw;
+        overflow: none;
     }
 
     .navbar { 
@@ -23,7 +31,10 @@
     }
 
     
-    .dashboard-container {width: 90%; border-radius: 2rem;}
+    .dashboard-container {
+        max-width: 80vw; border-radius: 2rem;
+        overflow-x: hidden;
+    }
     .card {
         padding: 1rem;
         margin: 1rem auto;

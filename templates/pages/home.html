@@ -29,7 +29,7 @@
                 <div class="progress-label">72%</div>
             </div>
 
-            <a href="#" class="btn">Continue</a>
+            <a href="{% url 'flashcard_home' %}" class="btn">Continue</a>
         </div>
         <div class="card">
             <h3>Tray Setups</h3>
@@ -41,7 +41,7 @@
                 <div class="progress-label">72%</div>
             </div>
             
-            <a href="#" class="btn">Practice</a>
+            <a href="{% url 'main_tray_view' %}" class="btn">Practice</a>
         </div>
         
         <div class="card">
@@ -54,11 +54,11 @@
                 <div class="progress-label">72%</div>
             </div>
             
-            <a href="#" class="btn">Review</a>
+            <a href="{% url 'instrument_hub' %}" class="btn">Review</a>
         </div>
         <div class="card">
             <h3>Anatomy</h3>
-            <div class="circular-progress" data-percentage="72">
+            <div class="circular-progress" data-percentage="23">
                 <svg class="progress-ring" viewbox="0 0 120 120" width="240" height="240">
                     <circle class="progress-ring-bg" stroke="#999" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
                     <circle class="progress-ring-circle" stroke="#004B87" stroke-width="15" fill="transparent" r="50" cx="60" cy="60"/>
@@ -66,7 +66,7 @@
                 <div class="progress-label">72%</div>
             </div>
             
-            <a href="#" class="btn">Explore</a>
+            <a href="{% url 'anatomy_main' %}" class="btn">Explore</a>
         </div>
         
     </section>
