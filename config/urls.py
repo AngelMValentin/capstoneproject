@@ -26,6 +26,7 @@ urlpatterns = [
     path('notes/', include('notes.urls')),
     path('users/', include('users.urls')),
     path('anatomy/', include('anatomy.urls')),
+    path('trays/', include('tray_setup.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

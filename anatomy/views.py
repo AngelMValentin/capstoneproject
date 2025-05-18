@@ -25,8 +25,12 @@ def systems_view(request, slug):
     current_index = list(systems).index(main_entry.system)
     next_index = (current_index + 1) % systems.count()
     next_system = systems[next_index]
+    anatomy = AnatomyMain.objects.filter(system=main_entry.system)
+    descriptions = main_entry.get_descriptions()
 
     return render(request, "anatomy/systems.html", {
         'system': main_entry.system,
-        'next_slug': AnatomyMain.objects.get(system=next_system).slug
+        'next_slug': AnatomyMain.objects.get(system=next_system).slug,
+        'anatomy': anatomy,
+        'descriptions': descriptions
     })

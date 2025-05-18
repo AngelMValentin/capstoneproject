@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'notes',
     'users',
     'anatomy',
+    'tray_setup',
 ]
 
 MIDDLEWARE = [

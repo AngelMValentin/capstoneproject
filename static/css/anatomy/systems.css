@@ -1,0 +1,105 @@
+.system-container {
+    width: 100vw;
+    height: fit-content;
+    min-height: 90vh;
+}
+.system_name {
+    margin: 1rem 0;
+    text-align: center;
+}
+.carousel {
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+}
+.slides {
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slide iframe {
+    width: 100%;
+    height: 100%;
+}
+#slide1:checked ~ .slides #s1, 
+#slide2:checked ~ .slides #s2, 
+#slide3:checked ~ .slides #s3{
+    display: block;
+}
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+.navigation label {
+    padding: 2px 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.navigation label:hover {
+    background-color: var(--blue-light);
+}
+#slide1:checked ~ .navigation label[for="slide1"],
+#slide2:checked ~ .navigation label[for="slide2"],
+#slide3:checked ~ .navigation label[for="slide3"] {
+    background-color: var(--navy);
+    border-color: var(--navy);
+}
+
+.accordion {
+    width: 90%;
+    margin: 2rem auto;
+    background-color: rgba(216, 230, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+.accordion-item {
+    border-bottom: 1px solid var(--blue-light);
+}
+.accordion-content {
+    padding: 1rem;
+}
+
+.accordion-content {
+    display: none;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.next-btn {
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid var(--navy);
+    padding:  5px 10px;
+    font-weight: bold;
+    color: var(--navy);
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+.next-btn:hover {
+    background-color: var(--navy);
+    color: white;
+}

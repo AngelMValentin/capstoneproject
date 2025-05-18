@@ -27,6 +27,9 @@ class AnatomyMain(models.Model):
 
     def get_embed_codes(self):
         return [code for code in [self.model_embed_code1, self.model_embed_code2, self.model_embed_code3, self.model_embed_code4] if code]
+    
+    def get_descriptions(self):
+        return [desc for desc in [self.description1, self.description2, self.description3, self.description4] if desc]
 
     def save(self, *args, **kwargs):
         if not self.slug:

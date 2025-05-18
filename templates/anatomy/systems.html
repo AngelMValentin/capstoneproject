@@ -5,16 +5,112 @@
 {% endblock %}
 
 {% block css %}
+<link rel="stylesheet" href="{% static 'css/anatomy/systems.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="system-container">
-    <h1>{{ system.name }}</h1>
-    <p>More detailed content for {{ system.name }} will go here.</p>
+    <h1 class="system_name">{{ system.name }}</h1>
+    <div class="carousel">
+        {% for a in anatomy %}
+            {% with embed_codes=a.get_embed_codes %}
+            {% for code in embed_codes %}
+            <input type="radio" name="slider" id="slide{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} hidden>
+            {% endfor %}
+            
+            <div class="slides">
+                {% for code in embed_codes %}
+                <div class="slide" id="s{{ forloop.counter }}">
+                    {{ code|safe }}
+                </div>
+                {% endfor %}
+            </div>
+    
+        <div class="navigation">
+                {% for code in embed_codes %}
+                    <label for="slide{{forloop.counter}}"></label>
+                {% endfor %}
+                
+        </div>
+            {% endwith %}
+        {% endfor %}
+        
+    </div>
+    
 
     <a href="{% url 'systems_page' slug=next_slug %}" class="next-btn">Next System</a>
+    <div class="system_description">
+        <div class="accordion">
+        {% for item in descriptions %}
+            <div class="accordion-item">
+                <div class="accordion-header">
+                <span>Description {{ forloop.counter }}</span>
+                <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                {{ item }}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="question_container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h5>{{ question.question_text }}</h5>
+            <br>
+            <div class="choice_container">
+                {% for c in choices %}
+                <label class="choiceLabel"><input type="radio" 
+                    name="choice"
+                    data-is-correct="{{ c.is_correct|yesno:'true,false' }}"
+                    >{{ c.choice_text }}</label>
+                {% endfor %}
+            </div>
+            <div class="btnGroup">
+                <button type="button" class="questionBtn" id="checkBtn">Check your Answer</button>
+    
+                <button type="submit">Next Question</button>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
 
 {% block js %}
+<script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    document.getElementById('checkBtn').addEventListener('click', () => {
+        const selected = document.querySelector('input[name="choice"]:checked');
+        if (!selected) {
+            alert("Please selected an answer.");
+            return;
+        }
+
+        const isCorrect = selected.dataset.isCorrect === "true";
+        const label = selected.closest('label');
+
+        document.querySelectorAll('.choiceLabel').forEach(lbl => {
+            lbl.classList.remove('correct', 'wrong');
+        });
+        label.classList.add(isCorrect ? 'correct' : 'wrong');
+    });
+</script>
+{% if request.method == "POST" %}
+<script>
+    window.addEventListener('load', () => {
+        const questionSection = document.querySelector('.question_container');
+        if (questionSection) {
+            questionSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+</script>
+{% endif %}
+
 {% endblock %}
