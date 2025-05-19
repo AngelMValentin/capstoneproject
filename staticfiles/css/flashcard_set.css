@@ -2,15 +2,15 @@
     text-align: center;
 }
 .flashcard-set {
-    width: 75%;
+    width: 80%;
     height: 64vh;
-    margin: 3rem auto;
+    margin: 1rem auto 3rem auto;
     perspective: 1000px;
 }
 
 .card-inner {
     position: relative;
-    margin: 4rem auto 2rem auto;
+    margin: 2rem auto 2rem auto;
     width: 90%;
     height: 90%;
     transform-style: preserve-3d;
@@ -60,19 +60,20 @@
 
 
 .subtopic-filters {
-    margin-bottom: 1.5rem;
+    margin: 1rem 0 .5rem 0;
     text-align: center;
 }
 
 .topic-buttons a {
     display: inline-block;
     margin: 5px;
-    padding: 8px 12px;
+    padding: 5px 10px;
     background-color: #eee;
-    color: #333;
+    color: var(--navy);
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 .topic-buttons a:hover {
@@ -80,7 +81,7 @@
 }
 
 .topic-buttons .active {
-    background-color: #333;
+    background-color: var(--navy);
     color: #fff;
 }
 
