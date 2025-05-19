@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.loca.lt',
+    'surgical-tech-companion-c95c25da5f52.herokuapp.com',
 ]
 
 
