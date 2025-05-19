@@ -1,0 +1,204 @@
+body {
+    background: linear-gradient(to bottom right, #f9fbfc, var(--navy));
+    color: var(--blue-light);
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-container {
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: var(--font-main);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5%;
+}
+
+
+
+.welcome h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+.welcome {
+    color: var(--navy);
+    text-align: center;
+}
+
+
+/* progress cards */
+.progress-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-gap: 1rem;
+}
+.card {
+    background: var(--blue-light);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.6s ease;
+}
+.card h3, .progress-label, .card p {
+    color: var(--navy);
+}
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.circular-progress {
+    width: 100%;
+    max-width: 12rem;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    margin: 0 auto;
+}
+.progress-ring {
+    width: 100%;
+    height: 100%;
+}
+.progress-ring-bg,
+.progress-ring-circle {
+    fill: none;
+    stroke-width: 15;
+}
+.progress-ring {
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.5s ease-out;
+}
+.progress-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1rem;
+}
+.btn {
+    background: var(--navy);
+    color: white;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: #030bab;
+}
+
+/* daily goals section  */
+
+.daily-goal, .stats-section {
+    margin: 20px 0;
+}
+.daily-goal {
+    background-color: var(--blue-light);
+    border-left: 5px solid var(--navy);
+    padding: 1rem;
+    margin: 20px auto 20px auto;
+    border-radius: 1rem;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+}
+.daily-goal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #034040;
+}
+.daily-goal ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.daily-goal li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: #034040;
+}
+.daily-goal li::before {
+    content: "✔️";
+    margin-right: 0.5rem;
+}
+.challenge-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px dashed var(--navy);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.challenge-box:hover {
+    transform: translateY(-5px);
+}
+.challenge-box h3 {
+    font-size: 1.3rem;
+    color: #BF0404;
+    margin-bottom: 0.5rem;
+}
+.challenge-box p {
+    font-size: 1rem;
+    color: #034040;
+    margin-bottom: 1rem;
+}
+.btn-small {
+    background-color: red;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+.btn-small:hover {
+    background-color: var(--blue-light);
+    color: red;
+}
+
+/* study stats section  */
+
+.stats-section {
+    width: 90%;
+    background-color: var(--blue-light);
+    padding: 1rem;
+    margin: 1rem auto 1rem auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+.stats-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--navy);
+}
+.stats-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1.1rem;
+}
+.stats-list li {
+    flex: 1 2 200px;
+    background-color: #fff;
+    border-left: 5px solid var(--navy);
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.stats-list li strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-top: 0.25rem;
+}
