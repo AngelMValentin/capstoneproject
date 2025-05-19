@@ -3,11 +3,6 @@ body {
     color: var(--blue-light);
     overflow-x: hidden;
 }
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
 
 .dashboard-container {
     margin: 2rem auto;
