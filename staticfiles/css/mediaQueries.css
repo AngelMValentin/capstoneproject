@@ -64,6 +64,9 @@
     .chapter-header {
         justify-content: center;
     }
+    .hub-container {
+        min-height: calc(100vh - 70px);
+    }
 
     /* tray setups */
 
