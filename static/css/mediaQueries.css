@@ -27,8 +27,10 @@
 
     
     .dashboard-container {
-        max-width: 100vw; border-radius: 2rem;
+        max-width: 100vw; 
+        border-radius: 2rem;
         overflow-x: hidden;
+        height: calc(fit-content + 100px);
     }
     .card {
         padding: 1rem;
